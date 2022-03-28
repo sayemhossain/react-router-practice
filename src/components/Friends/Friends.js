@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import { useEffect } from "react";
 
 const Friends = () => {
+  const [friends, setFriends] = useState([]);
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((res) => res.json())
+      .then((data) => setFriends(data));
+  }, []);
   return (
     <div>
       <h3>This is friends section.</h3>
