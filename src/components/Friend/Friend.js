@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const Friend = (props) => {
   const { name, username, id } = props.friend;
+
   const nevigate = useNavigate();
   const showFriendDetail = () => {
     const path = `/friend/${id}`;
