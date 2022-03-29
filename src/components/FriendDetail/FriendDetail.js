@@ -11,7 +11,7 @@ const FriendDetail = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setFriend(data));
-  }, []);
+  }, [friend]);
   return (
     <div>
       <h3>This is friend details about: {friendId}</h3>
@@ -30,6 +30,12 @@ const FriendDetail = () => {
       </p>
       <p>
         Website: <small>{friend.website}</small>
+      </p>
+      <p>
+        City: <small>{friend.address?.city}</small>
+      </p>
+      <p>
+        Lat: <small>{friend.address?.geo?.lat}</small>
       </p>
     </div>
   );
