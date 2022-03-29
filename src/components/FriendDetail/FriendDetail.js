@@ -8,7 +8,6 @@ const FriendDetail = () => {
   const [friend, setFriend] = useState({});
   useEffect(() => {
     const url = `https://jsonplaceholder.typicode.com/users/${friendId}`;
-    console.log(url);
     fetch(url)
       .then((res) => res.json())
       .then((data) => setFriend(data));
@@ -22,7 +21,16 @@ const FriendDetail = () => {
         voluptates minus, accusantium dolor reiciendis fuga expedita quibusdam
         ad asperiores odio.
       </p>
-      <p>{friend.length}</p>
+      <h3>Name: {friend.name} </h3>
+      <p>
+        Email: <small>{friend.email}</small>
+      </p>
+      <p>
+        Phone: <small>{friend.phone}</small>
+      </p>
+      <p>
+        Website: <small>{friend.website}</small>
+      </p>
     </div>
   );
 };
